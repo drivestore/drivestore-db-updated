@@ -2,7 +2,7 @@ FROM postgres:13
 RUN apt update  
 RUN apt-get install  software-properties-common python3.6 python3-pip -y
 RUN pip3 install -U Flask
-
+RUN pip3 install waitress
 WORKDIR /app
 COPY ./src/app.py app.py
 ADD runner.sh /docker-entrypoint-initdb.d/
